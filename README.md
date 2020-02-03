@@ -1,5 +1,7 @@
 # core-components
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/travi-org/core-components.svg)](https://greenkeeper.io/)
+
 core React components for Travi.org sites
 
 <!-- status badges -->
