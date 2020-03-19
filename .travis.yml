@@ -4,4 +4,5 @@ notifications:
 import:
   - source: 'form8ion/.travis-ci:node.yml'
   - source: 'travi-org/.travis-ci:authenticated-semantic-release.yml'
+  - source: travi-org/.travis-ci:authenticated-netlify-deploy.yml
 after_success: 'npm run coverage:report'
