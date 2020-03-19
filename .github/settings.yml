@@ -2,5 +2,5 @@ _extends: .github
 repository:
   name: core-components
   description: core React components for Travi.org sites
-  homepage: 'https://npm.im/@travi/core-components'
+  homepage: 'https://core-components.travi.org'
   private: false
