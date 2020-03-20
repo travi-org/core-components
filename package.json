@@ -29,7 +29,7 @@
     "build:js": "rollup --config",
     "build:storybook": "build-storybook --quiet",
     "predeploy:netlify": "run-s build",
-    "deploy:netlify": "netlify deploy --dir=./storybook-static --prod",
+    "deploy:netlify": "netlify deploy --dir=./storybook-static",
     "watch": "run-s 'build:js -- --watch'",
     "prepack": "run-s build",
     "start": "start-storybook --port 8888 --ci",
