@@ -33,7 +33,6 @@ $ npm install @travi/travi.org-core-components --save-prod
 [![Commitizen friendly][commitizen-badge]][commitizen-link]
 [![semantic-release][semantic-release-badge]][semantic-release-link]
 [![PRs Welcome][PRs-badge]][PRs-link]
-[![Greenkeeper badge](https://badges.greenkeeper.io/travi-org/core-components.svg)](https://greenkeeper.io/)
 [![Renovate][renovate-badge]][renovate-link]
 
 <!--contribution-badges end -->
