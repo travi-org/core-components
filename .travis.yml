@@ -12,6 +12,10 @@ jobs:
     - stage: test
       after_success: npm run coverage:report
 
+stages:
+  - test
+  - deploy
+
 env:
   global:
     - secure: xIZit5PyX3nFADTa+XRCUBbleIju40dHb457AT3Lt/uDIfK6cJKibF1yZmDcLRr8eoGpViabXReZ3/xeBIgMxRW5Zy+ax5f13wEaqHWkuqzU2PA4kNxHTs7dW+NGu3nO8k+35hCPJuE6C2xxsVDeadLZNaCq7G+iVMM3Q5pC+u1EeqDChJ+p0/mdYCjnhtF/eKpf698O2uKsmrY75YQJ5MAm09pVwnn3qDdPFQ51xZuNxzCndyqMeHej+lZaNSwvfvPbNp/By+v9oKfzQDVyF3MGIGh5PJMON1GrWruXR8m7u28/w2acpFvJuy1xaqQ1tIaB7oTEmxDEmDNIEEbGGghl7a4U8E6/CXxPLB8tJxyDbMeOiudZAFsibtQuFGRY5Qjf607HKjkkv9kOQCAVTZaVZsVZw2TvR3l0LIwyx4ZBzD1c9fnib62FkZRFICyYx86amxlCcOepWGfkHYSiIrfu14uILgH9gCoLmB7leTR5CDurj2wRhpqoa2vitIxo+JQzrFcclhQz5fm1nB22T6UO7pmMAPuoIy4ozzQ1nrdlzr0XE201UnYGpFyWd2mFrq1o3gy9R2pUhbp+ANPhZXndQ2FwgGLzaKgIfvvyR5SxnFZ70msBk9sCIArJsBjEt5xOpYt0wc01fNyqyB6p9QrY3+idDBGcXti1iP33EkM=
