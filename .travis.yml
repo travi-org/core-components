@@ -1,21 +1,22 @@
 version: "~> 1.0"
 notifications:
   email: false
-
 import:
 - source: form8ion/.travis-ci:node.yml
 - source: travi-org/.travis-ci:authenticated-semantic-release-stage.yml
 - source: travi-org/.travis-ci:authenticated-netlify-deploy-stage.yml
+- source: form8ion/.travis-ci:chromatic.yml
 
 jobs:
   include:
-    - stage: test
-      after_success: npm run coverage:report
+  - stage: test
+    after_success: npm run coverage:report
 
 stages:
-  - test
-  - deploy
+- test
+- deploy
 
 env:
   global:
-    - secure: xIZit5PyX3nFADTa+XRCUBbleIju40dHb457AT3Lt/uDIfK6cJKibF1yZmDcLRr8eoGpViabXReZ3/xeBIgMxRW5Zy+ax5f13wEaqHWkuqzU2PA4kNxHTs7dW+NGu3nO8k+35hCPJuE6C2xxsVDeadLZNaCq7G+iVMM3Q5pC+u1EeqDChJ+p0/mdYCjnhtF/eKpf698O2uKsmrY75YQJ5MAm09pVwnn3qDdPFQ51xZuNxzCndyqMeHej+lZaNSwvfvPbNp/By+v9oKfzQDVyF3MGIGh5PJMON1GrWruXR8m7u28/w2acpFvJuy1xaqQ1tIaB7oTEmxDEmDNIEEbGGghl7a4U8E6/CXxPLB8tJxyDbMeOiudZAFsibtQuFGRY5Qjf607HKjkkv9kOQCAVTZaVZsVZw2TvR3l0LIwyx4ZBzD1c9fnib62FkZRFICyYx86amxlCcOepWGfkHYSiIrfu14uILgH9gCoLmB7leTR5CDurj2wRhpqoa2vitIxo+JQzrFcclhQz5fm1nB22T6UO7pmMAPuoIy4ozzQ1nrdlzr0XE201UnYGpFyWd2mFrq1o3gy9R2pUhbp+ANPhZXndQ2FwgGLzaKgIfvvyR5SxnFZ70msBk9sCIArJsBjEt5xOpYt0wc01fNyqyB6p9QrY3+idDBGcXti1iP33EkM=
+  - secure: xIZit5PyX3nFADTa+XRCUBbleIju40dHb457AT3Lt/uDIfK6cJKibF1yZmDcLRr8eoGpViabXReZ3/xeBIgMxRW5Zy+ax5f13wEaqHWkuqzU2PA4kNxHTs7dW+NGu3nO8k+35hCPJuE6C2xxsVDeadLZNaCq7G+iVMM3Q5pC+u1EeqDChJ+p0/mdYCjnhtF/eKpf698O2uKsmrY75YQJ5MAm09pVwnn3qDdPFQ51xZuNxzCndyqMeHej+lZaNSwvfvPbNp/By+v9oKfzQDVyF3MGIGh5PJMON1GrWruXR8m7u28/w2acpFvJuy1xaqQ1tIaB7oTEmxDEmDNIEEbGGghl7a4U8E6/CXxPLB8tJxyDbMeOiudZAFsibtQuFGRY5Qjf607HKjkkv9kOQCAVTZaVZsVZw2TvR3l0LIwyx4ZBzD1c9fnib62FkZRFICyYx86amxlCcOepWGfkHYSiIrfu14uILgH9gCoLmB7leTR5CDurj2wRhpqoa2vitIxo+JQzrFcclhQz5fm1nB22T6UO7pmMAPuoIy4ozzQ1nrdlzr0XE201UnYGpFyWd2mFrq1o3gy9R2pUhbp+ANPhZXndQ2FwgGLzaKgIfvvyR5SxnFZ70msBk9sCIArJsBjEt5xOpYt0wc01fNyqyB6p9QrY3+idDBGcXti1iP33EkM=
+  - secure: uUCXN8RUCGLGgcILybB8Ks6aG7fCaeJRFrW+GkBVt+cjCHJtrPkqZuy0O1B73A02kjTfXR6lu+RDww9/Plz6rjS2msQnjV29hL8JwPjkM/OsbEBEUcpl/CNjiN9zopGp73eQVZpx+pqw2sbTGM/FTjGrF2kzPFvMowFDD5bsYhyxd5Zu0tB1rdtrW0kXDr9596v1PPsod0XLsWpgNFY0eds80rwrZMjbQYFkWJIs3hl7RmGjpDviWq3C3aLt9Wa4JqRMFsQ8cATkmfxkgK9kkJC9+HRjs3bzDn+f0dGeMrKa67btNDmLozy8OF/tJ/7RVzKR5JV42TAEwFIGFt0osGjZQYMWSsdDZH4xV2eZLCay1gAt/Iiojvz7i1VBYuC703TLld9b33FxYNCemXXRLrps8NQqBt+xSahZMtAZ9P5aX90kSpCg+UxdUyP8lc1+z4FouRUBgrbMNT1P7Kccyj2cWa2oJqqYzbctDd3XwemqL6cOJ7LYOBS8zb/EYC8AHCsbQudCtUU8YL+OhUqpQG81gFD5pk1LEWo3jnuyytZ2VwBRu+KUTpknZKd06rMMj1iXgw7dC42Lzw/rrMk5eKSDnPtIoyJEbSBZkqsWSXC7ZkXDBgk7T2/nKPBZdVc2iIKloieBW85rVpej9H2SPtDH1kFc8FSdRSAJHpUUfic=
