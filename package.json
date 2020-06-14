@@ -19,7 +19,7 @@
   "scripts": {
     "test": "npm-run-all --print-label --parallel lint:* --parallel test:*",
     "lint:lockfile": "lockfile-lint --path package-lock.json --type npm --validate-https --allowed-hosts npm",
-    "lint:js": "eslint . --cache",
+    "lint:js": "eslint . .storybook/ --cache",
     "lint:md": "remark . --frail",
     "lint:sensitive": "ban",
     "lint:travis": "travis-lint .travis.yml",
@@ -27,7 +27,7 @@
     "prebuild": "run-s clean",
     "build": "npm-run-all --print-label --parallel build:*",
     "build:js": "rollup --config",
-    "build:storybook": "ANY_SEED=9589764745905.996 build-storybook --quiet",
+    "build:storybook": "build-storybook --quiet",
     "predeploy:netlify": "run-s build",
     "deploy:netlify": "netlify deploy --dir=./storybook-static",
     "watch": "run-s 'build:js -- --watch'",
@@ -59,6 +59,7 @@
     "@travi/eslint-config-react": "1.0.29",
     "@travi/travis-lint": "1.0.1",
     "babel-loader": "8.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.24",
     "ban-sensitive-files": "1.9.7",
     "chai": "4.2.0",
     "codecov": "3.7.0",
@@ -79,6 +80,7 @@
     "rollup-plugin-auto-external": "2.0.0",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-node-resolve": "5.2.0",
-    "sinon": "9.0.2"
+    "sinon": "9.0.2",
+    "webpack": "4.43.0"
   }
 }
