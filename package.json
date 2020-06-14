@@ -37,7 +37,7 @@
     "test:unit:base": "DEBUG=any mocha 'src/**/*-test.js'",
     "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint:peer": "npm ls >/dev/null",
-    "deploy:chromatic": "npx chromatic --build-script-name=build:storybook"
+    "deploy:chromatic": "ANY_SEED=9589764745905.996 npx chromatic --build-script-name=build:storybook"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
