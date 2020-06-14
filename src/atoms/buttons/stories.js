@@ -1,9 +1,20 @@
 import React from 'react';
 import {Send} from '@material-ui/icons';
-import {storiesOf} from '@storybook/react';
 import any from '@travi/any';
 import {PrimaryButton} from '../..';
 
-storiesOf('Atoms/Buttons/Primary', module)
-  .add('default', () => (<PrimaryButton>{any.word()}</PrimaryButton>))
-  .add('with icon', () => (<PrimaryButton icon={<Send />}>{any.word()}</PrimaryButton>));
+export default {
+  title: 'Atoms/Buttons/Primary'
+};
+
+export const Default = () => <PrimaryButton>{any.word()}</PrimaryButton>;
+
+Default.story = {
+  name: 'default'
+};
+
+export const WithIcon = () => <PrimaryButton icon={<Send />}>{any.word()}</PrimaryButton>;
+
+WithIcon.story = {
+  name: 'with icon'
+};
