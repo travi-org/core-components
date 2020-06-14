@@ -27,7 +27,7 @@
     "prebuild": "run-s clean",
     "build": "npm-run-all --print-label --parallel build:*",
     "build:js": "rollup --config",
-    "build:storybook": "build-storybook --quiet",
+    "build:storybook": "ANY_SEED=9589764745905.996 build-storybook --quiet",
     "predeploy:netlify": "run-s build",
     "deploy:netlify": "netlify deploy --dir=./storybook-static",
     "watch": "run-s 'build:js -- --watch'",
@@ -37,7 +37,7 @@
     "test:unit:base": "DEBUG=any mocha 'src/**/*-test.js'",
     "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint:peer": "npm ls >/dev/null",
-    "deploy:chromatic": "ANY_SEED=9589764745905.996 npx chromatic --build-script-name=build:storybook"
+    "deploy:chromatic": "npx chromatic --build-script-name=build:storybook"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
