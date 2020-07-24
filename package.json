@@ -81,6 +81,6 @@
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "sinon": "9.0.2",
-    "webpack": "4.43.0"
+    "webpack": "4.44.0"
   }
 }
