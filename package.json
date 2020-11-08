@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@babel/register": "7.12.1",
-    "@emotion/babel-preset-css-prop": "10.1.0",
+    "@emotion/babel-preset-css-prop": "10.2.0",
     "@storybook/react": "6.0.28",
     "@travi/any": "2.0.13",
     "@travi/babel-preset": "3.0.33",
