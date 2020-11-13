@@ -27,13 +27,26 @@ jobs:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
       - uses: bahmutov/npm-install@v1
       - run: npm test
+      - name: Upload coverage data to Codecov
+        run: 'npm run coverage:report'
+  release:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Read .nvmrc
+        run: 'echo ::set-output name=NVMRC::$(cat .nvmrc)'
+        id: nvm
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      - uses: bahmutov/npm-install@v1
       - name: semantic-release
         uses: cycjimmy/semantic-release-action@v2
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           NPM_TOKEN: '${{ secrets.NPM_PUBLISH_TOKEN }}'
-      - name: Upload coverage data to Codecov
-        run: 'npm run coverage:report'
   storybook:
     if: github.ref == 'refs/heads/master'
     needs: verify
