@@ -13,4 +13,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: build:storybook
           autoAcceptChanges: master
-          exitOnceUplodaed: true
+          exitOnceUploaded: true
