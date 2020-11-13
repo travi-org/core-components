@@ -35,6 +35,7 @@ jobs:
       - name: Upload coverage data to Codecov
         run: 'npm run coverage:report'
   storybook:
+    if: github.ref == 'refs/heads/master'
     needs: verify
     runs-on: ubuntu-latest
     steps:
