@@ -14,7 +14,7 @@ env:
   FORCE_COLOR: 1
   NPM_CONFIG_COLOR: always
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -34,3 +34,19 @@ jobs:
           NPM_TOKEN: '${{ secrets.NPM_PUBLISH_TOKEN }}'
       - name: Upload coverage data to Codecov
         run: 'npm run coverage:report'
+  storybook:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Read .nvmrc
+        run: 'echo ::set-output name=NVMRC::$(cat .nvmrc)'
+        id: nvm
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      - uses: bahmutov/npm-install@v1
+      - run: npm run deploy:netlify
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
