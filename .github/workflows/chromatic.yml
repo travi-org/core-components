@@ -11,4 +11,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          buildScriptName: deploy:chromatic
+          buildScriptName: build:storybook
+          autoAcceptChanges: master
+          exitOnceUplodaed: true
