@@ -35,7 +35,8 @@
     "test:unit": "nyc run-s test:unit:base",
     "test:unit:base": "DEBUG=any mocha 'src/**/*-test.js'",
     "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint:peer": "npm ls >/dev/null"
+    "lint:peer": "npm ls >/dev/null",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
@@ -64,7 +65,7 @@
     "cz-conventional-changelog": "3.3.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.5",
-    "husky": "5.0.8",
+    "husky": "7.0.4",
     "lockfile-lint": "4.3.7",
     "mocha": "8.2.1",
     "netlify-cli": "2.65.6",
