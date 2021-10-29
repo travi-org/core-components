@@ -58,7 +58,7 @@
     "@travi/eslint-config-react": "1.0.63",
     "babel-loader": "8.2.2",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24",
-    "ban-sensitive-files": "1.9.14",
+    "ban-sensitive-files": "1.9.16",
     "chai": "4.2.0",
     "codecov": "3.8.1",
     "commitlint-config-travi": "1.3.11",
