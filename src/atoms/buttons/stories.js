@@ -7,13 +7,17 @@ export default {
   title: 'Atoms/Buttons/Primary'
 };
 
-export const Default = () => <PrimaryButton>{any.word()}</PrimaryButton>;
+export function Default() {
+  return <PrimaryButton>{any.word()}</PrimaryButton>;
+}
 
 Default.story = {
   name: 'default'
 };
 
-export const WithIcon = () => <PrimaryButton icon={<Send />}>{any.word()}</PrimaryButton>;
+export function WithIcon() {
+  return <PrimaryButton icon={<Send />}>{any.word()}</PrimaryButton>;
+}
 
 WithIcon.story = {
   name: 'with icon'
