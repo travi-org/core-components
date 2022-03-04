@@ -6,7 +6,9 @@ export default {
   title: 'Atoms/Logo'
 };
 
-export const Default = () => <Logo />;
+export function Default() {
+  return <Logo />;
+}
 
 Default.story = {
   name: 'default'
