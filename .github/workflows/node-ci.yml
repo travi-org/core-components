@@ -16,6 +16,18 @@ env:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+      - run: npm clean-install
+      - run: npm test
+      - uses: codecov/codecov-action@v2
+  verify-matrix:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node:
@@ -31,9 +43,10 @@ jobs:
           cache: npm
       - run: npm clean-install
       - run: npm test
-      - uses: codecov/codecov-action@v2
   release:
-    needs: verify
+    needs:
+      - verify
+      - verify-matrix
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -54,9 +67,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Read .nvmrc
-        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
-        id: nvm
       - name: Setup node
         uses: actions/setup-node@v3
         with:
